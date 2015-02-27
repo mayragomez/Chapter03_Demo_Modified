@@ -7,7 +7,7 @@ $.closeBtn.addEventListener('click', function(){
 //instance variable used in data binding
 //we do this set here to trigger the events
 //that wil cause the data to be rendered
-$.car.set(args.data.attributes);
+$.car.set(args.data);
 
 //free model-view data binding resources when this 
 //view-controller closes
