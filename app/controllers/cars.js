@@ -1,3 +1,4 @@
+//controllers/cars.js
 function transform(model){
 	
 	var carObject = model.toJSON();
@@ -28,8 +29,8 @@ $.mainWindow.addEventListener("close", function()
 $.table.addEventListener('click', function(_event){
 	
 	// get the correct model
-	var model = Alloy.Collections.cars.get(_event.rowData.modelId);
-	//alert(model);
+	var model = Alloy.Collections.cars.getByCid(_event.rowData.modelId);
+	
 	//create the controller and pass in the model
 	var detailController = Alloy.createController("detail",
 	{
@@ -37,7 +38,7 @@ $.table.addEventListener('click', function(_event){
 		data: model
 	});
 	
-	
+	//get view returns the root view when no view ID is provided
 	detailController.getView().open(
 		{
 			modal: true	
